@@ -6,9 +6,9 @@ import AddTask from './components/AddTask';
 const App = () => {
   return (
     <TodoState>
-      <div className="App container">
-        <h2> Todo list</h2>
-        <div className='grid-2'>
+      <div className="app">
+        <h2 className="center"> Todo list</h2>
+        <div>
           <AddTask/>
           <TodoList/>
         </div>

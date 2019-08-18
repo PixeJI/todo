@@ -10,7 +10,7 @@ const TodoList = () => {
     }, [])
 
     return (
-        <div>
+        <div className="tasks-container">
             {
                 tasks.map(task => (
                     <TodoItem key={task.id} task={task} />

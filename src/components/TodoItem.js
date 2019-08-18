@@ -15,16 +15,20 @@ const TodoItem = ({ task }) => {
         setCompleted(task)
     }
     return (
-        <div className="card bg-light">
-            <h3 className='text-primary text-left' > {title} </h3>
-            <p className={`${completed ? 'completed' : ''}`}> {description}</p>
+        <div className="card container">
+            <h3 className='text-left' > {title} </h3>
+            <p className={`${completed ? 'completed' : ''} task-description`}> {description}</p>
 
             <div className="space-between">
                 <div>
-                    <button className={`${completed ? 'disabled' : ''} btn btn-dark btn-sm`} onClick={onSetCurrent}>Edit</button>
-                    <button className='btn btn-danger btn-sm' onClick={onDelete}> Delete</button>
+                    { !completed && (
+                        <div>
+                            <button className='flex btn btn-edit' onClick={onSetCurrent}>Edit</button>
+                            <button className='flex btn btn-complete' onClick={onComplete}> Complete</button>
+                        </div>
+                    )}
                 </div>
-                <button className={`${completed ? 'disabled' : ''} btn btn-primary btn-sm`} onClick={onComplete}> Complete</button>
+                <button className='btn btn-delete' onClick={onDelete}> Delete</button>
             </div>
         </div>
     )

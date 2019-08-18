@@ -46,7 +46,7 @@ const AddTask = () => {
         })
     }
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="container task-form">
             <input
                 type='text'
                 placeholder='title'
@@ -67,12 +67,12 @@ const AddTask = () => {
                 <input
                     type='submit'
                     value={currentTask ? 'Update Task' : 'Add Task'}
-                    className='btn btn-primary btn-block'
+                    className='btn btn-add btn-block'
                 />
             </div>
             {currentTask && (
                 <div>
-                    <button className='btn btn-light btn-block' onClick={() => { clearCurrentTask() }}>Cancel</button>
+                    <button className='btn btn-cancel btn-block' onClick={() => { clearCurrentTask() }}>Cancel</button>
                 </div>
             )}
         </form >
